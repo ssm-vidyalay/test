@@ -1,11 +1,28 @@
-const express = require("express");
-const app=express();
+// const express = require("express");
+// const app=express();
 
-app.get("/", (req, res)=>{
-    res.send("Helllo");
-})
+// app.get("/", (req, res)=>{
+//     res.send("Helllo");
+// })
 
 
-app.listen(5000, ()=>{
-    console.log("Listening on Port 5000");
-})
+// app.listen(5000, ()=>{
+//     console.log("Listening on Port 5000");
+// })
+
+
+const app = require("./app");
+const dotenv = require("dotenv");
+// const cloudinary = require("cloudinary");
+const connectDatabase = require("./config/database");
+
+dotenv.config({path:"config/config.env"});
+
+
+connectDatabase();
+
+app.get("/", (req, res)=>{res.send("Hello")});
+
+app.listen(process.env.PORT, () => {
+  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+});
