@@ -21,7 +21,7 @@ dotenv.config({path:"config/config.env"});
 
 connectDatabase();
 
-app.get("/", (req, res)=>{res.send("Hello")});
+app.get("/", (req, res)=>{res.send("HelloWorld")});
 
 app.listen(4000, () => {
   console.log(`Server is working on http://localhost:${4000}`);
