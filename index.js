@@ -23,6 +23,6 @@ connectDatabase();
 
 app.get("/", (req, res)=>{res.send("Hello")});
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+app.listen(4000, () => {
+  console.log(`Server is working on http://localhost:${4000}`);
 });

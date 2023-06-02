@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const cors=require('cors');
 
 const aboutus = require("./routes/aboutus_routes");
 const donate = require("./routes/donate_routes");
@@ -25,6 +26,7 @@ const alumniGallery = require("./routes/alumni_gallery_routes");
 
 
 
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
