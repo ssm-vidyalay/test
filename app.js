@@ -4,6 +4,10 @@ const bodyParser = require("body-parser");
 const cors=require('cors');
 
 const aboutusSSMV = require("./routes/aboutus_SSMV_routes");
+const aboutusAnnualReport = require("./routes/aboutus_AnnualReport_routes");
+const aboutusFounder = require("./routes/aboutus_Founder_routes");
+const aboutusPrinciple = require("./routes/aboutus_Principle_routes");
+const aboutusObjectives = require("./routes/aboutus_Objectives_routes");
 const donate = require("./routes/donate_routes");
 const grievances = require("./routes/grievances_routes");
 // const collegeAdministration = require("./routes/collegeAdministration_routes");
@@ -31,6 +35,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/ssmv", aboutusSSMV);
+app.use("/ssmv", aboutusAnnualReport);
+app.use("/ssmv", aboutusFounder);
+app.use("/ssmv", aboutusPrinciple);
+app.use("/ssmv", aboutusObjectives);
 app.use("/ssmv", donate);
 app.use("/ssmv", grievances);
 // app.use("/ssmv", collegeAdministration);

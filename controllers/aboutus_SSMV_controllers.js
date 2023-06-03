@@ -22,12 +22,11 @@ exports.getAboutusSSMVAll = async (req, res, next) =>{
 
 // Add addAboutusSSMV 
 exports.addAboutusSSMV = async (req, res) =>{
-    const { title, description, imagesurl } = req.body;
+    const { description, images } = req.body;
     // console.log(req.body);
     const aboutus = {
-        title: title,
         description: description,
-        imagesurl: imagesurl,
+        images: images,
     }
     // console.log(aboutus);
     const a = await Aboutus.create(aboutus);
