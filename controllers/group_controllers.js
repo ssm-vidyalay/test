@@ -2,67 +2,65 @@ const Group = require("../models/group_models");
 
 // single getGroup
 exports.getGroup = async (req, res, next) =>{
-    const member_detail = await Group.findById(req.params.id);
+    const group = await Group.findById(req.params.id);
   res.status(200).json({
     success: true,
-    member_detail,
+    group,
   });
 }
 
 // All getGroup
 exports.getGroupAll = async (req, res, next) =>{
-    const member_details = await Group.find();
+    const group = await Group.find();
   res.status(200).json({
     success: true,
-    member_details,
+    group,
   });
 }
 
 // Add addGroup 
 exports.addGroup = async (req, res) =>{
-    const { name, description, imagesurl } = req.body;
+    const { group } = req.body;
     const member = {
-        name: name,
-        description: description,
-        imagesurl: imagesurl,
+        group
     }
     // console.log(aboutus);
-    const member_detail = await Group.create(member);
+    const groups = await Group.create(member);
 
     res.status(200).json({
         success: true,
-        member_detail,
+        groups,
     });
 }
 
 // Upadate upadateGroup
 exports.updateGroup = async (req, res, next) =>{
-  let member_detail = await Group.findById(req.params.id);
+  let group = await Group.findById(req.params.id);
 
-  member_detail = await Group.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  group = await Group.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    member_detail,
+    group,
 });
 }
 
 // delete deleteGroup
 exports.deleteGroup = async(req, res, next) =>{
 
-  let member_detail = await Group.findById(req.params.id);
+  let group = await Group.findById(req.params.id);
 
-  if(!member_detail){
+  if(!group){
     return res.status(500).json({
       success:false,
       message:"member detail not found"
     })
   }
 
-  member_detail = await Group.findByIdAndDelete(req.params.id, req.body, {new:true,
+  group = await Group.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

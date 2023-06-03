@@ -1,68 +1,66 @@
-const Group = require("../models/collegeAdministration_models");
+const CollegeAdministration = require("../models/collegeAdministration_models");
 
-// single getGroup
-exports.getGroup = async (req, res, next) =>{
-    const member_detail = await Group.findById(req.params.id);
+// single getCollegeAdministration
+exports.getCollegeAdministration = async (req, res, next) =>{
+    const collegeadministration = await CollegeAdministration.findById(req.params.id);
   res.status(200).json({
     success: true,
-    member_detail,
+    collegeadministration,
   });
 }
 
-// All getGroup
-exports.getGroupAll = async (req, res, next) =>{
-    const member_details = await Group.find();
+// All getCollegeAdministration
+exports.getCollegeAdministrationAll = async (req, res, next) =>{
+    const collegeadministration = await CollegeAdministration.find();
   res.status(200).json({
     success: true,
-    member_details,
+    collegeadministration,
   });
 }
 
-// Add addGroup 
-exports.addGroup = async (req, res) =>{
-    const { name, description, imagesurl } = req.body;
+// Add addCollegeAdministration 
+exports.addCollegeAdministration = async (req, res) =>{
+    const { collegeAdministration } = req.body;
     const member = {
-        name: name,
-        description: description,
-        imagesurl: imagesurl,
+        collegeAdministration: collegeAdministration
     }
     // console.log(aboutus);
-    const member_detail = await Group.create(member);
+    const collegeadministration = await CollegeAdministration.create(member);
 
     res.status(200).json({
         success: true,
-        member_detail,
+        collegeadministration,
     });
 }
 
-// Upadate upadateGroup
-exports.updateGroup = async (req, res, next) =>{
-  let member_detail = await Group.findById(req.params.id);
+// Upadate upadateCollegeAdministration
+exports.updateCollegeAdministration = async (req, res, next) =>{
+  let collegeadministration = await CollegeAdministration.findById(req.params.id);
 
-  member_detail = await Group.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  collegeadministration = await CollegeAdministration.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    member_detail,
+    collegeadministration,
 });
 }
 
-// delete deleteGroup
-exports.deleteGroup = async(req, res, next) =>{
+// delete deleteCollegeAdministration
+exports.deleteCollegeAdministration = async(req, res, next) =>{
 
-  let member_detail = await Group.findById(req.params.id);
+  let collegeadministration = await CollegeAdministration.findById(req.params.id);
 
-  if(!member_detail){
+  if(!collegeadministration){
     return res.status(500).json({
       success:false,
       message:"member detail not found"
     })
   }
 
-  member_detail = await Group.findByIdAndDelete(req.params.id, req.body, {new:true,
+  collegeadministration = await CollegeAdministration.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

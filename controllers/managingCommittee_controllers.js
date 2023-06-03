@@ -2,67 +2,65 @@ const ManagingCommittee = require("../models/managingCommittee_models");
 
 // single getGroup
 exports.getManagingCommittee = async (req, res, next) =>{
-    const member_detail = await ManagingCommittee.findById(req.params.id);
+    const managingcommittee = await ManagingCommittee.findById(req.params.id);
   res.status(200).json({
     success: true,
-    member_detail,
+    managingcommittee,
   });
 }
 
 // All getGroup
 exports.getManagingCommitteeAll = async (req, res, next) =>{
-    const member_details = await ManagingCommittee.find();
+    const managingcommittee = await ManagingCommittee.find();
   res.status(200).json({
     success: true,
-    member_details,
+    managingcommittee,
   });
 }
 
 // Add addManagingCommittee 
 exports.addManagingCommittee = async (req, res) =>{
-    const { name, description, imagesurl } = req.body;
+    const { managingCommitte } = req.body;
     const member = {
-        name: name,
-        description: description,
-        imagesurl: imagesurl,
+        managingCommitte: managingCommitte
     }
     // console.log(aboutus);
-    const member_detail = await ManagingCommittee.create(member);
+    const managingcommittees = await ManagingCommittee.create(member);
 
     res.status(200).json({
         success: true,
-        member_detail,
+        managingcommittees,
     });
 }
 
 // Upadate upadateManagingCommittee
 exports.updateManagingCommittee = async (req, res, next) =>{
-  let member_detail = await ManagingCommittee.findById(req.params.id);
+  let managingcommittee = await ManagingCommittee.findById(req.params.id);
 
-  member_detail = await ManagingCommittee.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  managingcommittee = await ManagingCommittee.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    member_detail,
+    managingcommittee,
 });
 }
 
 // delete deleteManagingCommittee
 exports.deleteManagingCommittee = async(req, res, next) =>{
 
-  let member_detail = await ManagingCommittee.findById(req.params.id);
+  let managingcommittee = await ManagingCommittee.findById(req.params.id);
 
-  if(!member_detail){
+  if(!managingcommittee){
     return res.status(500).json({
       success:false,
       message:"member detail not found"
     })
   }
 
-  member_detail = await ManagingCommittee.findByIdAndDelete(req.params.id, req.body, {new:true,
+  managingcommittee = await ManagingCommittee.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

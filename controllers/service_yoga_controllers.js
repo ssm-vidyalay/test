@@ -2,74 +2,73 @@ const ServiceYoga = require("../models/service_yoga_models");
 
 // single getServiceYoga
 exports.getServiceYoga = async (req, res, next) =>{
-    const facility = await ServiceYoga.findById(req.params.id);
+    const service_yoga = await ServiceYoga.findById(req.params.id);
   res.status(200).json({
     success: true,
-    facility,
+    service_yoga,
   });
 }
 
 // All getServiceYoga
 exports.getServiceYogaAll = async (req, res, next) =>{
-    const facilities = await ServiceYoga.find();
+    const service_yoga = await ServiceYoga.find();
   res.status(200).json({
     success: true,
-    facilities,
+    service_yoga,
   });
 }
 
 // Add addServiceYoga 
 exports.addServiceYoga = async (req, res) =>{
-    const { name, description, imagesurl } = req.body;
+    const { description, images } = req.body;
     const member = {
-        name: name,
         description: description,
-        imagesurl: imagesurl,
+        images: images,
     }
     // console.log(aboutus);
-    const facility = await ServiceYoga.create(member);
+    const service_yoga = await ServiceYoga.create(member);
 
     res.status(200).json({
         success: true,
-        facility,
+        service_yoga,
     });
 }
 
 // Upadate upadateServiceYoga
 exports.updateServiceYoga = async (req, res, next) =>{
-  let facility = await ServiceYoga.findById(req.params.id);
+  let service_yoga = await ServiceYoga.findById(req.params.id);
 
-  facility = await ServiceYoga.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  service_yoga = await ServiceYoga.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    facility,
+    service_yoga,
 });
 }
 
 // delete deleteServiceYoga
 exports.deleteServiceYoga = async(req, res, next) =>{
 
-  let facility = await ServiceYoga.findById(req.params.id);
+  let service_yoga = await ServiceYoga.findById(req.params.id);
 
-  if(!facility){
+  if(!service_yoga){
     return res.status(500).json({
       success:false,
-      message:"facility detail not found"
+      message:"Service yoga detail not found"
     })
   }
 
-  facility = await ServiceYoga.findByIdAndDelete(req.params.id, req.body, {new:true,
+  service_yoga = await ServiceYoga.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    message:"facility detail is deleted successfully"
+    message:"Service yoga detail is deleted successfully"
 });
 
 }

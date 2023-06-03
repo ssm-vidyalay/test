@@ -2,21 +2,21 @@ const AboutusAnnualReport = require("../models/aboutus_AnnualReport_models");
 
 // single getAboutusAnnualReport
 exports.getAboutusAnnualReport = async (req, res, next) =>{
-    const a = await AboutusAnnualReport.findById(req.params.id);
-    console.log(a);
+    const annualReport = await AboutusAnnualReport.findById(req.params.id);
+    console.log(annualReport);
   res.status(200).json({
     success: true,
-    a,
+    annualReport,
   });
 }
 
 // All getAboutusAnnualReport
 exports.getAboutusAnnualReportAll = async (req, res, next) =>{
-    const aboutus = await AboutusAnnualReport.find();
-    console.log(aboutus);
+    const anuualReport = await AboutusAnnualReport.find();
+    console.log(anuualReport);
   res.status(200).json({
     success: true,
-    aboutus,
+    anuualReport,
   });
 }
 
@@ -28,49 +28,49 @@ exports.addAboutusAnnualReport = async (req, res) =>{
         description: description,
     }
     // console.log(aboutus);
-    const a = await AboutusAnnualReport.create(aboutus);
+    const annualReport = await AboutusAnnualReport.create(aboutus);
 
     res.status(200).json({
         success: true,
-        a,
+        annualReport,
     });
 }
 
 // Upadate upadateAboutusAnnualReport
 exports.updateAboutusAnnualReport = async (req, res, next) =>{
-  let detail = await AboutusAnnualReport.findById(req.params.id);
+  let annualReport = await AboutusAnnualReport.findById(req.params.id);
 
-  detail = await AboutusAnnualReport.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  annualReport = await AboutusAnnualReport.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    detail,
+    annualReport,
 });
 }
 
 // delete deleteAboutusAnnualReport
 exports.deleteAboutusAnnualReport = async(req, res, next) =>{
 
-  let detail = await AboutusAnnualReport.findById(req.params.id);
+  let annualReport = await AboutusAnnualReport.findById(req.params.id);
 
-  if(!detail){
+  if(!annualReport){
     return res.status(500).json({
       success:false,
-      message:"Detail not found"
+      message:"Annual Report not found"
     })
   }
 
-  detail = await AboutusAnnualReport.findByIdAndDelete(req.params.id, req.body, {new:true,
+  annualReport = await AboutusAnnualReport.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    message:"Detail is deleted successfully"
+    message:"Annual Report is deleted successfully"
 });
 
 }

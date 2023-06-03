@@ -2,19 +2,19 @@ const AlumniAbout = require("../models/alumni_about_models");
 
 // single getAlumniAbout
 exports.getAlumniAbout = async (req, res, next) =>{
-    const alumni = await AlumniAbout.findById(req.params.id);
+    const alumni_about = await AlumniAbout.findById(req.params.id);
   res.status(200).json({
     success: true,
-    alumni,
+    alumni_about,
   });
 }
 
 // All getAlumniAbout
 exports.getAlumniAboutAll = async (req, res, next) =>{
-    const alumnis = await AlumniAbout.find();
+    const alumni_about = await AlumniAbout.find();
   res.status(200).json({
     success: true,
-    alumnis,
+    alumni_about,
   });
 }
 
@@ -26,42 +26,42 @@ exports.addAlumniAbout = async (req, res) =>{
         description: description,
         imagesurl: imagesurl,
     }
-    const alumni = await AlumniAbout.create(member);
+    const alumni_about = await AlumniAbout.create(member);
 
     res.status(200).json({
         success: true,
-        alumni,
+        alumni_about,
     });
 }
 
 // Upadate upadateAlumniAbout
 exports.updateAlumniAbout = async (req, res, next) =>{
-  let alumni = await AlumniAbout.findById(req.params.id);
+  let alumni_about = await AlumniAbout.findById(req.params.id);
 
-  alumni = await AlumniAbout.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  alumni_about = await AlumniAbout.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    alumni,
+    alumni_about,
 });
 }
 
 // delete deleteAlumniAbout
 exports.deleteAlumniAbout = async(req, res, next) =>{
 
-  let alumni = await AlumniAbout.findById(req.params.id);
+  let alumni_about = await AlumniAbout.findById(req.params.id);
 
-  if(!alumni){
+  if(!alumni_about){
     return res.status(500).json({
       success:false,
       message:"alumni detail not found"
     })
   }
 
-  alumni = await AlumniAbout.findByIdAndDelete(req.params.id, req.body, {new:true,
+  alumni_about = await AlumniAbout.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

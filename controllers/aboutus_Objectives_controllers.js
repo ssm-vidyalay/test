@@ -2,21 +2,19 @@ const AboutusObjectives = require("../models/aboutus_Objectives_models");
 
 // single getAboutusObjectives
 exports.getAboutusObjectives = async (req, res, next) =>{
-    const a = await AboutusObjectives.findById(req.params.id);
-    console.log(a);
+    const objective = await AboutusObjectives.findById(req.params.id);
   res.status(200).json({
     success: true,
-    a,
+    objective,
   });
 }
 
 // All getAboutusObjectives
 exports.getAboutusObjectivesAll = async (req, res, next) =>{
-    const aboutus = await AboutusObjectives.find();
-    console.log(aboutus);
+    const objective = await AboutusObjectives.find();
   res.status(200).json({
     success: true,
-    aboutus,
+    objective,
   });
 }
 
@@ -28,49 +26,49 @@ exports.addAboutusObjectives = async (req, res) =>{
         description: description
     }
     // console.log(aboutus);
-    const a = await AboutusObjectives.create(aboutus);
+    const objective = await AboutusObjectives.create(aboutus);
 
     res.status(200).json({
         success: true,
-        a,
+        objective,
     });
 }
 
 // Upadate upadateAboutusObjectives
 exports.updateAboutusObjectives = async (req, res, next) =>{
-  let detail = await AboutusObjectives.findById(req.params.id);
+  let objective = await AboutusObjectives.findById(req.params.id);
 
-  detail = await AboutusObjectives.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  objective = await AboutusObjectives.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    detail,
+    objective,
 });
 }
 
 // delete deleteAboutusObjectives
 exports.deleteAboutusObjectives = async(req, res, next) =>{
 
-  let detail = await AboutusObjectives.findById(req.params.id);
+  let objective = await AboutusObjectives.findById(req.params.id);
 
-  if(!detail){
+  if(!objective){
     return res.status(500).json({
       success:false,
-      message:"Detail not found"
+      message:"Objective not found"
     })
   }
 
-  detail = await AboutusObjectives.findByIdAndDelete(req.params.id, req.body, {new:true,
+  objective = await AboutusObjectives.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    message:"Detail is deleted successfully"
+    message:"Objective is deleted successfully"
 });
 
 }

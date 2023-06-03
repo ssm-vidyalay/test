@@ -2,76 +2,72 @@ const Aboutus = require("../models/aboutus_SSMV_models");
 
 // single getAboutusSSMV
 exports.getAboutusSSMV = async (req, res, next) =>{
-    const a = await Aboutus.findById(req.params.id);
-    console.log(a);
+    const ssmv = await Aboutus.findById(req.params.id);
   res.status(200).json({
     success: true,
-    a,
+    ssmv,
   });
 }
 
 // All getAboutusSSMV
 exports.getAboutusSSMVAll = async (req, res, next) =>{
-    const aboutus = await Aboutus.find();
-    console.log(aboutus);
+    const ssmv = await Aboutus.find();
   res.status(200).json({
     success: true,
-    aboutus,
+    ssmv,
   });
 }
 
 // Add addAboutusSSMV 
 exports.addAboutusSSMV = async (req, res) =>{
     const { description, images } = req.body;
-    // console.log(req.body);
     const aboutus = {
         description: description,
         images: images,
     }
-    // console.log(aboutus);
-    const a = await Aboutus.create(aboutus);
+    const ssmv = await Aboutus.create(aboutus);
 
     res.status(200).json({
         success: true,
-        a,
+        ssmv,
     });
 }
 
 // Upadate upadateAboutusSSMV
 exports.updateAboutusSSMV = async (req, res, next) =>{
-  let detail = await Aboutus.findById(req.params.id);
+  let ssmv = await Aboutus.findById(req.params.id);
 
-  detail = await Aboutus.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  ssmv = await Aboutus.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    detail,
+    ssmv,
 });
 }
 
 // delete deleteAboutusSSMV
 exports.deleteAboutusSSMV = async(req, res, next) =>{
 
-  let detail = await Aboutus.findById(req.params.id);
+  let ssmv = await Aboutus.findById(req.params.id);
 
-  if(!detail){
+  if(!ssmv){
     return res.status(500).json({
       success:false,
-      message:"Detail not found"
+      message:"SSMV not found"
     })
   }
 
-  detail = await Aboutus.findByIdAndDelete(req.params.id, req.body, {new:true,
+  ssmv = await Aboutus.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    message:"Detail is deleted successfully"
+    message:"SSMV is deleted successfully"
 });
 
 }

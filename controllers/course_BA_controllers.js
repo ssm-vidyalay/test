@@ -2,19 +2,19 @@ const CourseBA = require("../models/course_BA_models");
 
 // single getCourseBA
 exports.getCourseBA = async (req, res, next) =>{
-    const subject = await CourseBA.findById(req.params.id);
+    const course_ba = await CourseBA.findById(req.params.id);
   res.status(200).json({
     success: true,
-    subject,
+    course_ba,
   });
 }
 
 // All getCourseBA
 exports.getCourseBAAll = async (req, res, next) =>{
-    const subjects = await CourseBA.find();
+    const course_ba = await CourseBA.find();
   res.status(200).json({
     success: true,
-    subjects,
+    course_ba,
   });
 }
 
@@ -24,17 +24,17 @@ exports.addCourseBA = async (req, res) =>{
     const member = {
         subject: subject,
     }
-    const sub = await CourseBA.create(member);
+    const course_ba = await CourseBA.create(member);
 
     res.status(200).json({
         success: true,
-        sub,
+        course_ba,
     });
 }
 
 // Upadate upadateCourseBA
 exports.updateCourseBA = async (req, res, next) =>{
-  let subject = await CourseBA.findById(req.params.id);
+  let course_ba = await CourseBA.findById(req.params.id);
 
   subject = await CourseBA.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
@@ -43,23 +43,23 @@ exports.updateCourseBA = async (req, res, next) =>{
 
   res.status(200).json({
     success: true,
-    subject,
+    course_ba,
 });
 }
 
 // delete deleteCourseBA
 exports.deleteCourseBA = async(req, res, next) =>{
 
-  let subject = await CourseBA.findById(req.params.id);
+  let course_ba = await CourseBA.findById(req.params.id);
 
-  if(!subject){
+  if(!course_ba){
     return res.status(500).json({
       success:false,
       message:"subject not found"
     })
   }
 
-  subject = await CourseBA.findByIdAndDelete(req.params.id, req.body, {new:true,
+  course_ba = await CourseBA.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

@@ -2,21 +2,21 @@ const AboutusFounder = require("../models/aboutus_Founder_models");
 
 // single getAboutusAnnualReport
 exports.getAboutusFounder = async (req, res, next) =>{
-    const a = await AboutusFounder.findById(req.params.id);
-    console.log(a);
+    const founder = await AboutusFounder.findById(req.params.id);
+    console.log(founder);
   res.status(200).json({
     success: true,
-    a,
+    founder,
   });
 }
 
 // All getAboutusFounder
 exports.getAboutusFounderAll = async (req, res, next) =>{
-    const aboutus = await AboutusFounder.find();
-    console.log(aboutus);
+    const founder = await AboutusFounder.find();
+    console.log(founder);
   res.status(200).json({
     success: true,
-    aboutus,
+    founder,
   });
 }
 
@@ -28,49 +28,49 @@ exports.addAboutusFounder = async (req, res) =>{
         founder: founder
     }
     // console.log(aboutus);
-    const a = await AboutusFounder.create(aboutus);
+    const FounderSingle = await AboutusFounder.create(aboutus);
 
     res.status(200).json({
         success: true,
-        a,
+        FounderSingle,
     });
 }
 
 // Upadate upadateAboutusFounder
 exports.updateAboutusFounder = async (req, res, next) =>{
-  let detail = await AboutusFounder.findById(req.params.id);
+  let founder = await AboutusFounder.findById(req.params.id);
 
-  detail = await AboutusFounder.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  founder = await AboutusFounder.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    detail,
+    founder,
 });
 }
 
 // delete deleteAboutusFounder
 exports.deleteAboutusFounder = async(req, res, next) =>{
 
-  let detail = await AboutusFounder.findById(req.params.id);
+  let founder = await AboutusFounder.findById(req.params.id);
 
-  if(!detail){
+  if(!founder){
     return res.status(500).json({
       success:false,
-      message:"Detail not found"
+      message:"Founder not found"
     })
   }
 
-  detail = await AboutusFounder.findByIdAndDelete(req.params.id, req.body, {new:true,
+  founder = await AboutusFounder.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    message:"Detail is deleted successfully"
+    message:"Founder is deleted successfully"
 });
 
 }
