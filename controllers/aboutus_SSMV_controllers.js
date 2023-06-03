@@ -1,7 +1,7 @@
-const Aboutus = require("../models/aboutus_models");
+const Aboutus = require("../models/aboutus_SSMV_models");
 
-// single getAboutus
-exports.getAboutus = async (req, res, next) =>{
+// single getAboutusSSMV
+exports.getAboutusSSMV = async (req, res, next) =>{
     const a = await Aboutus.findById(req.params.id);
     console.log(a);
   res.status(200).json({
@@ -10,8 +10,8 @@ exports.getAboutus = async (req, res, next) =>{
   });
 }
 
-// All getAboutus
-exports.getAboutusAll = async (req, res, next) =>{
+// All getAboutusSSMV
+exports.getAboutusSSMVAll = async (req, res, next) =>{
     const aboutus = await Aboutus.find();
     console.log(aboutus);
   res.status(200).json({
@@ -20,8 +20,8 @@ exports.getAboutusAll = async (req, res, next) =>{
   });
 }
 
-// Add addAboutus 
-exports.addAboutus = async (req, res) =>{
+// Add addAboutusSSMV 
+exports.addAboutusSSMV = async (req, res) =>{
     const { title, description, imagesurl } = req.body;
     // console.log(req.body);
     const aboutus = {
@@ -38,8 +38,8 @@ exports.addAboutus = async (req, res) =>{
     });
 }
 
-// Upadate upadateAboutus
-exports.updateAboutus = async (req, res, next) =>{
+// Upadate upadateAboutusSSMV
+exports.updateAboutusSSMV = async (req, res, next) =>{
   let detail = await Aboutus.findById(req.params.id);
 
   detail = await Aboutus.findByIdAndUpdate(req.params.id, req.body, {new:true,
@@ -53,8 +53,8 @@ exports.updateAboutus = async (req, res, next) =>{
 });
 }
 
-// delete deleteAboutus
-exports.deleteAboutus = async(req, res, next) =>{
+// delete deleteAboutusSSMV
+exports.deleteAboutusSSMV = async(req, res, next) =>{
 
   let detail = await Aboutus.findById(req.params.id);
 

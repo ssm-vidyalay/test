@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors=require('cors');
 
-const aboutus = require("./routes/aboutus_routes");
+const aboutusSSMV = require("./routes/aboutus_SSMV_routes");
 const donate = require("./routes/donate_routes");
 const grievances = require("./routes/grievances_routes");
 // const collegeAdministration = require("./routes/collegeAdministration_routes");
@@ -30,7 +30,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use("/ssmv", aboutus);
+app.use("/ssmv", aboutusSSMV);
 app.use("/ssmv", donate);
 app.use("/ssmv", grievances);
 // app.use("/ssmv", collegeAdministration);
