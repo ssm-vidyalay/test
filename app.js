@@ -31,6 +31,7 @@ const admission = require("./routes/admission_routes");
 const latest = require("./routes/latest_routes");
 const notice = require("./routes/notice_routes");
 const news = require("./routes/news_routes");
+const user = require("./routes/user_routes");
 
 
 
@@ -66,6 +67,6 @@ app.use("/ssmv", admission);
 app.use("/ssmv", latest);
 app.use("/ssmv", notice);
 app.use("/ssmv", news);
-
+app.use("/ssmv", user);
 
 module.exports = app;

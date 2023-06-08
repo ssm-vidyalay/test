@@ -20,10 +20,13 @@ exports.getCollegeAdministrationAll = async (req, res, next) =>{
 
 // Add addCollegeAdministration 
 exports.addCollegeAdministration = async (req, res) =>{
-    const { collegeAdministration } = req.body;
-    const member = {
-        collegeAdministration: collegeAdministration
-    }
+  const { name, image, description, designation } = req.body;
+  const member = {
+      name: name,
+      image: image,
+      description: description,
+      designation: designation,
+  }
     // console.log(aboutus);
     const collegeadministration = await CollegeAdministration.create(member);
 

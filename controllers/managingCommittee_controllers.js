@@ -20,12 +20,12 @@ exports.getManagingCommitteeAll = async (req, res, next) =>{
 
 // Add addManagingCommittee 
 exports.addManagingCommittee = async (req, res) =>{
-    const { name, image, description, desigantion } = req.body;
+    const { name, image, description, designation } = req.body;
     const member = {
         name: name,
         image: image,
         description: description,
-        desigantion: desigantion
+        designation: designation,
     }
     // console.log(aboutus);
     const managingcommittees = await ManagingCommittee.create(member);

@@ -9,14 +9,14 @@ const managingCommitteeSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-            designation:{
+            description:{
                 type:String,
                 required:true
             },
             designation:{
                 type:String,
                 required:true
-            },
+            }
 });
 
 module.exports = mongoose.model("ManangingCommittee", managingCommitteeSchema);

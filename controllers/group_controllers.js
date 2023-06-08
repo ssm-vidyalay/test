@@ -20,9 +20,11 @@ exports.getGroupAll = async (req, res, next) =>{
 
 // Add addGroup 
 exports.addGroup = async (req, res) =>{
-    const { group } = req.body;
+    const { name, designation, department } = req.body;
     const member = {
-        group
+        name: name,
+        designation: designation,
+        department: department
     }
     // console.log(aboutus);
     const groups = await Group.create(member);

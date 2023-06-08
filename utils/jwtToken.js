@@ -6,8 +6,8 @@
 // dotenv.config({path:"config/config.env"});
 
 
-const sendToken = (admission, statusCode, res) => {
-    const token = admission.getJWTToken();
+const sendToken = (user, statusCode, res) => {
+    const token = user.getJWTToken();
   
     // options for cookie
     const options = {
@@ -19,7 +19,7 @@ const sendToken = (admission, statusCode, res) => {
   
     res.status(statusCode).cookie("token", token, options).json({
       success: true,
-    admission,
+    user,
       token,
     });
   };

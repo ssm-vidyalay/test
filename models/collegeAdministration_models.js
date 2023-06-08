@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const collegeAdministrationSchema = new mongoose.Schema({
-    collegeAdministration:[
-        {
             name:{
                 type:String,
                 required:true
@@ -19,8 +17,6 @@ const collegeAdministrationSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-        }
-    ]
 });
 
 module.exports = mongoose.model("CollegeAdministration", collegeAdministrationSchema);
