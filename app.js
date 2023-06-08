@@ -34,7 +34,7 @@ const admission = require("./routes/admission_routes");
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser);
+app.use(cookieParser());
 
 app.use("/ssmv", aboutusSSMV);
 app.use("/ssmv", aboutusAnnualReport);
