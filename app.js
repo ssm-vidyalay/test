@@ -28,13 +28,16 @@ const alumniEvent = require("./routes/alumni_event_routes");
 const alumniVideoGallery = require("./routes/alumni_videoGallery_routes");
 const alumniGallery = require("./routes/alumni_gallery_routes");
 const admission = require("./routes/admission_routes");
+const latest = require("./routes/latest_routes");
+const notice = require("./routes/notice_routes");
+const news = require("./routes/news_routes");
 
 
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser);
+app.use(cookieParser());
 
 app.use("/ssmv", aboutusSSMV);
 app.use("/ssmv", aboutusAnnualReport);
@@ -60,6 +63,9 @@ app.use("/ssmv", alumniEvent);
 app.use("/ssmv", alumniVideoGallery);
 app.use("/ssmv", alumniGallery);
 app.use("/ssmv", admission);
+app.use("/ssmv", latest);
+app.use("/ssmv", notice);
+app.use("/ssmv", news);
 
 
 module.exports = app;

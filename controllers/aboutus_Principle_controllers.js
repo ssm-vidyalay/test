@@ -22,12 +22,14 @@ exports.getAboutusPrincipleAll = async (req, res, next) =>{
 
 // Add addAboutusPrinciple 
 exports.addAboutusPrinciple = async (req, res) =>{
-    const { principle } = req.body;
-    // console.log(req.body);
-    const aboutus = {
-        principle: principle
-    }
-    // console.log(aboutus);
+  const { name, image, description, designation } = req.body;
+  // console.log(req.body);
+  const aboutus = {
+      name: name,
+      image: image,
+      description: description,
+      designation: designation,
+  }
     const principles = await AboutusPrinciple.create(aboutus);
 
     res.status(200).json({

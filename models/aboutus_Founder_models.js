@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 const aboutusFounderSchema = new mongoose.Schema({
     
-    founder:[
-        {
+
             name:{
                 type:String,
                 required:true
@@ -20,9 +19,6 @@ const aboutusFounderSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-            
-        },
-    ],
 });
 
 module.exports = mongoose.model("AboutusFounder", aboutusFounderSchema);

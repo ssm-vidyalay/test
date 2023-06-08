@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 
 const aboutusPrincipleSchema = new mongoose.Schema({
-    
-    principle:[
-        {
+  
             name:{
                 type:String,
                 required:true
@@ -21,8 +19,6 @@ const aboutusPrincipleSchema = new mongoose.Schema({
                 required:true
             },
             
-        },
-    ],
 });
 
 module.exports = mongoose.model("AboutusPrinciple", aboutusPrincipleSchema);

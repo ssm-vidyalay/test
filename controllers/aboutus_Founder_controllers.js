@@ -22,10 +22,13 @@ exports.getAboutusFounderAll = async (req, res, next) =>{
 
 // Add addAboutusFounder 
 exports.addAboutusFounder = async (req, res) =>{
-    const { founder } = req.body;
+    const { name, image, description, designation } = req.body;
     // console.log(req.body);
     const aboutus = {
-        founder: founder
+        name: name,
+        image: image,
+        description: description,
+        designation: designation,
     }
     // console.log(aboutus);
     const FounderSingle = await AboutusFounder.create(aboutus);
