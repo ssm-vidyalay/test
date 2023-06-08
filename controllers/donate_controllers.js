@@ -23,7 +23,7 @@ exports.addDonate = async (req, res) =>{
     const { name, description, imagesurl } = req.body;
     const donate = {
         name: name,
-        description: description,
+        description: description, 
         imagesurl: imagesurl,
     }
     // console.log(aboutus);

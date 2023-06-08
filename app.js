@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors=require('cors');
+const cookieParser = require("cookie-parser");
 
 const aboutusSSMV = require("./routes/aboutus_SSMV_routes");
 const aboutusAnnualReport = require("./routes/aboutus_AnnualReport_routes");
@@ -26,13 +27,14 @@ const alumniSpotlight = require("./routes/alumni_spotlight_routes");
 const alumniEvent = require("./routes/alumni_event_routes");
 const alumniVideoGallery = require("./routes/alumni_videoGallery_routes");
 const alumniGallery = require("./routes/alumni_gallery_routes");
-// const admission = require("./routes/admission_routes");
+const admission = require("./routes/admission_routes");
 
 
 
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser);
 
 app.use("/ssmv", aboutusSSMV);
 app.use("/ssmv", aboutusAnnualReport);
@@ -57,7 +59,7 @@ app.use("/ssmv", alumniSpotlight);
 app.use("/ssmv", alumniEvent);
 app.use("/ssmv", alumniVideoGallery);
 app.use("/ssmv", alumniGallery);
-// app.use("/ssmv", admission);
+app.use("/ssmv", admission);
 
 
 module.exports = app;
