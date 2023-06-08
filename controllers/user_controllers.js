@@ -10,12 +10,10 @@ const sendToken = require("../utils/jwtToken");
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
   
   const { name, password } = req.body;
-
   const user = await User.create({
     name,
-    password,
+    password
   });
-
   sendToken(user, 201, res);
 });
 
@@ -40,7 +38,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   if (!isPasswordMatched) {
     return next(new ErrorHander("Invalid name or password", 401));
   }
-
+  
   sendToken(user, 200, res);
 });
 
