@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const noticeSchema = new mongoose.Schema({
-    notice:[
-        {
             date:{
                 type: Date,
                 required: true
@@ -15,8 +13,6 @@ const noticeSchema = new mongoose.Schema({
                 type: String,
                 required: true
             },
-        }
-    ]
 });
 
 module.exports = mongoose.model("Notice", noticeSchema);

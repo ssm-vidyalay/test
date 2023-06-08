@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const managingCommitteeSchema = new mongoose.Schema({
-    managingCommittee:[
-        {
             name:{
                 type:String,
                 required:true
@@ -19,8 +17,6 @@ const managingCommitteeSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-        }
-    ]
 });
 
 module.exports = mongoose.model("ManangingCommittee", managingCommitteeSchema);

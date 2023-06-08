@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
 const groupSchema = new mongoose.Schema({
-    group:[
-        {
             name:{
                 type:String,
                 required:true
@@ -11,12 +9,10 @@ const groupSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-            designation:{
+            department:{
                 type:String,
                 required:true
             },
-        }
-    ]
 });
 
 module.exports = mongoose.model("Group", groupSchema);

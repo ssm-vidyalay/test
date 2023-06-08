@@ -20,9 +20,11 @@ exports.getNewsAll = async (req, res, next) =>{
 
 // Add addNews 
 exports.addNews = async (req, res) =>{
-    const { news } = req.body;
+    const { name, description, imagesurl } = req.body;
     const member = {
-        news
+        name: name,
+        description: description,
+        imagesurl: imagesurl
     }
     // console.log(aboutus);
     const newss = await News.create(member);

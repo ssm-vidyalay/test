@@ -20,11 +20,12 @@ exports.getNoticeAll = async (req, res, next) =>{
 
 // Add addNotice 
 exports.addNotice = async (req, res) =>{
-    const { notice } = req.body;
-    const member = {
-        notice
-    }
-    // console.log(aboutus);
+  const { name, description, imagesurl } = req.body;
+  const member = {
+      name: name,
+      description: description,
+      imagesurl: imagesurl
+  }
     const notices = await Notice.create(member);
 
     res.status(200).json({

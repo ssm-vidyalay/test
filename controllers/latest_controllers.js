@@ -20,9 +20,11 @@ exports.getLatestAll = async (req, res, next) =>{
 
 // Add addLatest 
 exports.addLatest = async (req, res) =>{
-    const { latest } = req.body;
+    const { name, description, imagesurl } = req.body;
     const member = {
-        latest
+        name: name,
+        description: description,
+        imagesurl: imagesurl
     }
     // console.log(aboutus);
     const latests = await Latest.create(member);
