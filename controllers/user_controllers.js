@@ -55,3 +55,7 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
+exports.verify=catchAsyncErrors(async (req, res, next) => {
+   res.send("admin");
+});
+
