@@ -35,7 +35,7 @@ const user = require("./routes/user_routes");
 
 
 
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000','https://shree-syadvad-mahavidyalaya.github.io'], credentials: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
