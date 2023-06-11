@@ -32,6 +32,7 @@ const latest = require("./routes/latest_routes");
 const notice = require("./routes/notice_routes");
 const news = require("./routes/news_routes");
 const user = require("./routes/user_routes");
+const homeOnlineCourses = require("./routes/home_onlineCourses_routes");
 
 
 
@@ -68,5 +69,6 @@ app.use("/ssmv", latest);
 app.use("/ssmv", notice);
 app.use("/ssmv", news);
 app.use("/ssmv", user);
+app.use("/ssmv", homeOnlineCourses);
 
 module.exports = app;
