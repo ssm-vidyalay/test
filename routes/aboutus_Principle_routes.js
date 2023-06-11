@@ -4,8 +4,8 @@ const router = express.Router();
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 
-router.route("/aboutus/principle/:id").get(isAuthenticatedUser, getAboutusPrinciple);
-router.route("/aboutus/principle/").get(isAuthenticatedUser, getAboutusPrincipleAll);
+router.route("/aboutus/principle/:id").get(getAboutusPrinciple);
+router.route("/aboutus/principle/").get(getAboutusPrincipleAll);
 router.route("/aboutus/principle/new").post(isAuthenticatedUser, authorizeRoles("admin"), addAboutusPrinciple);
 router.route("/aboutus/principle/:id").put(isAuthenticatedUser, authorizeRoles("admin"), updateAboutusPrinciple);
 router.route("/aboutus/principle/:id").delete(isAuthenticatedUser, authorizeRoles("admin"), deleteAboutusPrinciple);

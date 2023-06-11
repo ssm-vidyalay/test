@@ -4,8 +4,8 @@ const router = express.Router();
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 
-router.route("/aboutus/SSMV/:id").get(isAuthenticatedUser, getAboutusSSMV);
-router.route("/aboutus/SSMV/").get(isAuthenticatedUser, getAboutusSSMVAll);
+router.route("/aboutus/SSMV/:id").get(getAboutusSSMV);
+router.route("/aboutus/SSMV/").get(getAboutusSSMVAll);
 router.route("/aboutus/SSMV/new").post(isAuthenticatedUser, authorizeRoles("admin"), addAboutusSSMV);
 router.route("/aboutus/SSMV/:id").put(isAuthenticatedUser, authorizeRoles("admin"), updateAboutusSSMV);
 router.route("/aboutus/SSMV/:id").delete(isAuthenticatedUser, authorizeRoles("admin"), deleteAboutusSSMV);
