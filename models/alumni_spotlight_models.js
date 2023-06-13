@@ -12,7 +12,11 @@ const alumniSpotlightSchema = new mongoose.Schema({
     imagesurl:{
         type:String,
         required: true
-    }
+    },
+    profile:{
+        type:String,
+        required: true
+    },
 });
 
 module.exports = mongoose.model("AlumniSpotlight", alumniSpotlightSchema);

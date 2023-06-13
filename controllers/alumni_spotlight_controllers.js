@@ -20,11 +20,12 @@ exports.getAlumniSpotlightAll = async (req, res, next) =>{
 
 // Add addAlumniSpotlight 
 exports.addAlumniSpotlight = async (req, res) =>{
-    const { name, description, imagesurl } = req.body;
+    const { name, description, imagesurl, profile } = req.body;
     const member = {
         name: name,
         description: description,
         imagesurl: imagesurl,
+        profile: profile
     }
     const alumni_spotlight = await AlumniSpotlight.create(member);
 

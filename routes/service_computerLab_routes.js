@@ -1,7 +1,7 @@
 const express = require("express");
 const { getServiceComputerLab, getServiceComputerLabAll, addServiceComputerLab, updateServiceComputerLab, deleteServiceComputerLab } = require("../controllers/service_computerLab_controllers");
 const router = express.Router();
-const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
+// const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 
 router.route("/services/computerLab/:id").get(getServiceComputerLab);
