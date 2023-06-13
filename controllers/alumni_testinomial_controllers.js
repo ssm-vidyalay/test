@@ -20,9 +20,9 @@ exports.getAlumniTestinomialAll = async (req, res, next) =>{
 
 // Add addAlumniTestinomial 
 exports.addAlumniTestinomial = async (req, res) =>{
-    const { name, description, imagesurl } = req.body;
+    const { title, description, imagesurl } = req.body;
     const member = {
-        name: name,
+        title: title,
         description: description,
         imagesurl: imagesurl,
     }
@@ -38,7 +38,7 @@ exports.addAlumniTestinomial = async (req, res) =>{
 exports.updateAlumniTestinomial = async (req, res, next) =>{
   let alumni_testinomial = await AlumniTestinomial.findById(req.params.id);
 
-  alumni_testinomial = await AlumnTestinomialt.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  alumni_testinomial = await AlumniTestinomial.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
