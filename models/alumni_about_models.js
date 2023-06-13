@@ -12,7 +12,8 @@ const alumniAboutSchema = new mongoose.Schema({
     imagesurl:{
         type:String, 
         required:true
-    }
+    },
+    
 });
 
 module.exports = mongoose.model("AlumniAbout", alumniAboutSchema);

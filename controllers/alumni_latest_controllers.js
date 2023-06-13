@@ -20,8 +20,9 @@ exports.getAlumniLatestAll = async (req, res, next) =>{
 
 // Add addAlumniLatest 
 exports.addAlumniLatest = async (req, res) =>{
-    const { date, description, imagesurl } = req.body;
+    const { name, date, description, imagesurl } = req.body;
     const member = {
+        name: name,
         date: date,
         description: description,
         imagesurl: imagesurl,
