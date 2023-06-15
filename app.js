@@ -34,6 +34,9 @@ const notice = require("./routes/notice_routes");
 const news = require("./routes/news_routes");
 const user = require("./routes/user_routes");
 const homeOnlineCourses = require("./routes/home_onlineCourses_routes");
+const events = require("./routes/events_routes");
+const gallery = require("./routes/gallery_routes");
+const videoGallery = require("./routes/videoGallery_routes");
 
 
 
@@ -72,5 +75,8 @@ app.use("/ssmv", notice);
 app.use("/ssmv", news);
 app.use("/ssmv", user);
 app.use("/ssmv", homeOnlineCourses);
+app.use("/ssmv", events);
+app.use("/ssmv", gallery);
+app.use("/ssmv", videoGallery);
 
 module.exports = app;
