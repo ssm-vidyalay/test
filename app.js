@@ -37,6 +37,7 @@ const homeOnlineCourses = require("./routes/home_onlineCourses_routes");
 const events = require("./routes/events_routes");
 const gallery = require("./routes/gallery_routes");
 const videoGallery = require("./routes/videoGallery_routes");
+const homeAbout = require("./routes/home_about_routes");
 
 
 
@@ -78,5 +79,6 @@ app.use("/ssmv", homeOnlineCourses);
 app.use("/ssmv", events);
 app.use("/ssmv", gallery);
 app.use("/ssmv", videoGallery);
+app.use("/ssmv", homeAbout);
 
 module.exports = app;
