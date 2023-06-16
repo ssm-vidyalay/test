@@ -58,6 +58,9 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
 });
 
 exports.verify=catchAsyncErrors(async (req, res, next) => {
-   res.send("admin");
+  res.status(200).json({
+    success: true,
+    role: "admin",
+  });
 });
 
