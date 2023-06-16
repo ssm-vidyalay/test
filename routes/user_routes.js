@@ -12,6 +12,6 @@ const router = express.Router();
 router.route("/register/").post(registerUser);
 router.route("/login/").post(loginUser);
 router.route("/logout/").get(logoutUser);
-router.route("/verify").get(isAuthenticatedUser, authorizeRoles, verify);
+router.route("/verify").get(isAuthenticatedUser, authorizeRoles('admin'), verify);
 
 module.exports = router;
