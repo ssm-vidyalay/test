@@ -38,10 +38,15 @@ const events = require("./routes/events_routes");
 const gallery = require("./routes/gallery_routes");
 const videoGallery = require("./routes/videoGallery_routes");
 const homeAbout = require("./routes/home_about_routes");
+const serviceComputerLabImagesSlider = require("./routes/service_computerLab_imagesSlider_routes");
+const serviceHostelImagesSlider = require("./routes/service_hostel_imagesSlider_routes");
+const serviceLibraryImagesSlider = require("./routes/service_library_imagesSlider_routes");
+const serviceMessImagesSlider = require("./routes/service_mess_imagesSlider_routes");
+const serviceYogaImagesSlider = require("./routes/service_yoga_imagesSlider_routes");
 
 
 
-app.use(cors({ origin: ['http://localhost:3000','https://shree-syadvad-mahavidyalaya.github.io'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:4000','https://shree-syadvad-mahavidyalaya.github.io'], credentials: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -80,5 +85,10 @@ app.use("/ssmv", events);
 app.use("/ssmv", gallery);
 app.use("/ssmv", videoGallery);
 app.use("/ssmv", homeAbout);
+app.use("/ssmv", serviceComputerLabImagesSlider);
+app.use("/ssmv", serviceHostelImagesSlider);
+app.use("/ssmv", serviceLibraryImagesSlider);
+app.use("/ssmv", serviceMessImagesSlider);
+app.use("/ssmv", serviceYogaImagesSlider);
 
 module.exports = app;
