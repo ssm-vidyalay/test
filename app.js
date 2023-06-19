@@ -47,7 +47,7 @@ const alumniImagesSlider = require("./routes/alumni_imagesSlider_routes");
 
 
 
-app.use(cors({ origin: ['http://localhost:4000','https://shree-syadvad-mahavidyalaya.github.io'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000','https://shree-syadvad-mahavidyalaya.github.io','http://localhost:4000'], credentials: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
