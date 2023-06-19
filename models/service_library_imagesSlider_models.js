@@ -1,12 +1,11 @@
 const mongoose = require("mongoose");
 
 const serviceLibraryImagesSliderSchema = new mongoose.Schema({
-    images:[
+    images:
         {
             type:String,
             required:true
         }
-    ],
 });
 
 module.exports = mongoose.model("ServiceLibraryImagesSlider", serviceLibraryImagesSliderSchema);
