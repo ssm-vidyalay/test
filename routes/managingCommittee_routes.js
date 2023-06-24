@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/management/managingCommittee/:id").get(getManagingCommittee);
 router.route("/management/managingCommittee/").get(getManagingCommitteeAll);
-router.route("/management/managingCommittee/new").post(addManagingCommittee);
+router.route("/management/managingCommittee/").post(addManagingCommittee);
 router.route("/management/managingCommittee/:id").put(updateManagingCommittee);
 router.route("/management/managingCommittee/:id").delete(deleteManagingCommittee);
 

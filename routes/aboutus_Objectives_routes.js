@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/aboutus/objectives/").get(getAboutusObjectivesAll);
 router.route("/aboutus/objectives/:id").get(getAboutusObjectives);
-router.route("/aboutus/objectives/new").post(addAboutusObjectives);
+router.route("/aboutus/objectives/").post(addAboutusObjectives);
 router.route("/aboutus/objectives/:id").put(updateAboutusObjectives);
 router.route("/aboutus/objectives/:id").delete(deleteAboutusObjectives);
 

@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/news/:id").get(getNews);
 router.route("/news/").get(getNewsAll);
-router.route("/news/new").post(addNews);
+router.route("/news/").post(addNews);
 router.route("/news/:id").put(updateNews);
 router.route("/news/:id").delete(deleteNews);
 

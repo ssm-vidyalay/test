@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/home/onlineCourses/:id").get(getHomeOnlineCourses);
 router.route("/home/onlineCourses/").get(getHomeOnlineCoursesAll);
-router.route("/home/onlineCourses/new").post(addHomeOnlineCourses);
+router.route("/home/onlineCourses/").post(addHomeOnlineCourses);
 router.route("/home/onlineCourses/:id").put(updateHomeOnlineCourses);
 router.route("/home/onlineCourses/:id").delete(deleteHomeOnlineCourses);
 

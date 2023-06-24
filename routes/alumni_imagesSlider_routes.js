@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/alumni/imagesSlider/:id").get(getAlumniImagesSlider);
 router.route("/alumni/imagesSlider/").get(getAlumniImagesSliderAll);
-router.route("/alumni/imagesSlider/new").post(addAlumniImagesSlider);
+router.route("/alumni/imagesSlider/").post(addAlumniImagesSlider);
 router.route("/alumni/imagesSlider/:id").put(updateAlumniImagesSlider);
 router.route("/alumni/imagesSlider/:id").delete(deleteAlumniImagesSlider);
 

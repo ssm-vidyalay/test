@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/aboutus/principle/:id").get(getAboutusPrinciple);
 router.route("/aboutus/principle/").get(getAboutusPrincipleAll);
-router.route("/aboutus/principle/new").post(addAboutusPrinciple);
+router.route("/aboutus/principle/").post(addAboutusPrinciple);
 router.route("/aboutus/principle/:id").put(updateAboutusPrinciple);
 router.route("/aboutus/principle/:id").delete(deleteAboutusPrinciple);
 

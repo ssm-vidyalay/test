@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/gallery/").get(getGalleryAll);
 router.route("/gallery/:id").get(getGallery);
-router.route("/gallery/new").post(addGallery);
+router.route("/gallery/").post(addGallery);
 router.route("/gallery/:id").put(updateGallery);
 router.route("/gallery/:id").delete(deleteGallery);
 

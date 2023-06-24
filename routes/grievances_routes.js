@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/grievances/:id").get(getGrievance);
 router.route("/grievances/").get(getGrievanceAll);
-router.route("/grievances/new").post( addGrievance);
+router.route("/grievances/").post( addGrievance);
 router.route("/grievances/:id").put( updateGrievance);
 router.route("/grievances/:id").delete( deleteGrievance);
 

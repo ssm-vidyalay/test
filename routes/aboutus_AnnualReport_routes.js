@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.route("/aboutus/annualReport/:id").get(getAboutusAnnualReport);
 router.route("/aboutus/annualReport/").get(getAboutusAnnualReportAll);
-router.route("/aboutus/annualReport/new").post(addAboutusAnnualReport);
+router.route("/aboutus/annualReport/").post(addAboutusAnnualReport);
 router.route("/aboutus/annualReport/:id").put(updateAboutusAnnualReport);
 router.route("/aboutus/annualReport/:id").delete(deleteAboutusAnnualReport);
 

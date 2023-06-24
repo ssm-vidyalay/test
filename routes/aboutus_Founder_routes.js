@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/aboutus/founder/:id").get(getAboutusFounder);
 router.route("/aboutus/founder/").get(getAboutusFounderAll);
-router.route("/aboutus/founder/new").post(addAboutusFounder);
+router.route("/aboutus/founder/").post(addAboutusFounder);
 router.route("/aboutus/founder/:id").put(updateAboutusFounder);
 router.route("/aboutus/founder/:id").delete(deleteAboutusFounder);
 

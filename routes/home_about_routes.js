@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/home/about/:id").get(getHomeAbout);
 router.route("/home/about/").get(getHomeAboutAll);
-router.route("/home/about/new").post(addHomeAbout);
+router.route("/home/about/").post(addHomeAbout);
 router.route("/home/about/:id").put(updateHomeAbout);
 router.route("/home/about/:id").delete(deleteHomeAbout);
 

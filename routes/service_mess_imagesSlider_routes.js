@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/services/mess/imagesSlider/:id").get(getServiceMessImagesSlider);
 router.route("/services/messImagesSlider/").get(getServiceMessImagesSliderAll);
-router.route("/services/mess/imagesSlider/new").post(addServiceMessImagesSlider);
+router.route("/services/mess/imagesSlider/").post(addServiceMessImagesSlider);
 router.route("/services/mess/imagesSlider/:id").put(  updateServiceMessImagesSlider);
 router.route("/services/mess/imagesSlider/:id").delete(deleteServiceMessImagesSlider);
 

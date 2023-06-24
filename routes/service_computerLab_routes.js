@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/services/computerLab/:id").get(getServiceComputerLab);
 router.route("/services/computerLab/").get(getServiceComputerLabAll);
-router.route("/services/computerLab/new").post(addServiceComputerLab);
+router.route("/services/computerLab/").post(addServiceComputerLab);
 router.route("/services/computerLab/:id").put(updateServiceComputerLab);
 router.route("/services/computerLab/:id").delete(deleteServiceComputerLab);
 

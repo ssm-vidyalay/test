@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/alumni/testinomials/:id").get(getAlumniTestinomial);
 router.route("/alumni/testinomials/").get(getAlumniTestinomialAll);
-router.route("/alumni/testinomials/new").post( addAlumniTestinomial);
+router.route("/alumni/testinomials/").post( addAlumniTestinomial);
 router.route("/alumni/testinomials/:id").put( updateAlumniTestinomial);
 router.route("/alumni/testinomials/:id").delete( deleteAlumniTestinomial);
 

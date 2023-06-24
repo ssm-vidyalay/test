@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/services/hostel/:id").get(getServiceHostel);
 router.route("/services/hostel/").get(getServiceHostelAll);
-router.route("/services/hostel/new").post(addServiceHostel);
+router.route("/services/hostel/").post(addServiceHostel);
 router.route("/services/hostel/:id").put(updateServiceHostel);
 router.route("/services/hostel/:id").delete(deleteServiceHostel);
 

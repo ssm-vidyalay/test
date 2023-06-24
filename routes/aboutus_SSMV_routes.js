@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/aboutus/SSMV/:id").get(getAboutusSSMV);
 router.route("/aboutus/SSMV/").get(getAboutusSSMVAll);
-router.route("/aboutus/SSMV/new").post(addAboutusSSMV);
+router.route("/aboutus/SSMV/").post(addAboutusSSMV);
 router.route("/aboutus/SSMV/:id").put(updateAboutusSSMV);
 router.route("/aboutus/SSMV/:id").delete(deleteAboutusSSMV);
 

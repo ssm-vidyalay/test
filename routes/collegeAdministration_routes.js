@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/management/collegeAdministration/").get(getCollegeAdministrationAll);
 router.route("/management/collegeAdministration/:id").get(getCollegeAdministration);
-router.route("/management/collegeAdministration/new").post( addCollegeAdministration);
+router.route("/management/collegeAdministration/").post( addCollegeAdministration);
 router.route("/management/collegeAdministration/:id").put( updateCollegeAdministration);
 router.route("/management/collegeAdministration/:id").delete( deleteCollegeAdministration);
 

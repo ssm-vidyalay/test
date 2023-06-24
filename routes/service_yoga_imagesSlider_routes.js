@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/services/yoga/imagesSlider/:id").get(getServiceYogaImagesSlider);
 router.route("/services/yogaImagesSlider").get(getServiceYogaImagesSliderAll);
-router.route("/services/yoga/imagesSlider/new").post( addServiceYogaImagesSlider);
+router.route("/services/yoga/imagesSlider/").post( addServiceYogaImagesSlider);
 router.route("/services/yoga/imagesSlider/:id").put( updateServiceYogaImagesSlider);
 router.route("/services/yoga/imagesSlider/:id").delete( deleteServiceYogaImagesSlider);
 

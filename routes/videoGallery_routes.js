@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/videoGallery/").get(getVideoGalleryAll);
 router.route("/videoGallery/:id").get(getVideoGallery);
-router.route("/videoGallery/new").post(addVideoGallery);
+router.route("/videoGallery/").post(addVideoGallery);
 router.route("/videoGallery/:id").put(updateVideoGallery);
 router.route("/videoGallery/:id").delete(deleteVideoGallery);
 

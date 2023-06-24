@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/alumni/event/:id").get(getAlumniEvent);
 router.route("/alumni/event/").get(getAlumniEventAll);
-router.route("/alumni/event/new").post(addAlumniEvent);
+router.route("/alumni/event/").post(addAlumniEvent);
 router.route("/alumni/event/:id").put(updateAlumniEvent);
 router.route("/alumni/event/:id").delete(deleteAlumniEvent);
 

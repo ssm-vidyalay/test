@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route("/latest/:id").get(getLatest);
 router.route("/latest/").get(getLatestAll);
-router.route("/latest/new").post(addLatest);
+router.route("/latest/").post(addLatest);
 router.route("/latest/:id").put(updateLatest);
 router.route("/latest/:id").delete(deleteLatest);
 
