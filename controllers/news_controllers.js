@@ -24,7 +24,7 @@ exports.addNews = async (req, res) =>{
     const member = {
         date: date,
         description: description,
-        imagesurl: imagesurl
+        imageurl: imageurl
     }
     // console.log(aboutus);
     const newss = await News.create(member);

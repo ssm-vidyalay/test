@@ -24,7 +24,7 @@ exports.addNotice = async (req, res) =>{
   const member = {
       date: date,
       description: description,
-      imagesurl: imagesurl
+      imageurl: imageurl
   }
     const notices = await Notice.create(member);
 

@@ -9,7 +9,7 @@ const noticeSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-            imagesurl:{
+            imageurl:{
                 type: String,
                 required: true
             },

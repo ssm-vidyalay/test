@@ -9,7 +9,7 @@ const latestSchema = new mongoose.Schema({
                 type:String,
                 required:true
             },
-            imagesurl:{
+            imageurl:{
                 type: String,
                 required: true
             },
