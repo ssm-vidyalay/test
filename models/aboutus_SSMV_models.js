@@ -7,12 +7,10 @@ const aboutusSchema = new mongoose.Schema(
         type:String,
         required:true
     },
-    images:[
-        {
+    imageurl:{
             type:String,
             required:true
         }
-    ],
 });
 
 module.exports = mongoose.model("Aboutus", aboutusSchema);

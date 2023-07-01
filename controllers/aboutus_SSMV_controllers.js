@@ -23,7 +23,7 @@ exports.addAboutusSSMV = async (req, res) =>{
     const { description, images } = req.body;
     const aboutus = {
         description: description,
-        images: images,
+        imageurl: imageurl,
     }
     const ssmv = await Aboutus.create(aboutus);
 
