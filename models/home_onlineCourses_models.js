@@ -9,11 +9,11 @@ const homeOnlineCoursesSchema = new mongoose.Schema({
         type:String, 
         required:true
     },
-    image:{
+    imageurl:{
         type:String, 
         required:true
     },
-    link:{
+    youtubeLink:{
         type:String, 
         required:true
     },

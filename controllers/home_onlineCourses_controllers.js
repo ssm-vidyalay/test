@@ -20,7 +20,7 @@ exports.getHomeOnlineCoursesAll = async (req, res, next) =>{
 
 // Add addHomeOnlineCourses 
 exports.addHomeOnlineCourses = async (req, res) =>{
-    const { title, description, image, link } = req.body;
+    const { title, description, imageurl, youtubeLink } = req.body;
     const member = {
         title: title,
         description: description,
