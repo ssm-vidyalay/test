@@ -20,7 +20,7 @@ exports.getNoticeAll = async (req, res, next) =>{
 
 // Add addNotice 
 exports.addNotice = async (req, res) =>{
-  const { date, description, imagesurl } = req.body;
+  const { date, description, imageurl } = req.body;
   const member = {
       date: date,
       description: description,

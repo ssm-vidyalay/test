@@ -20,7 +20,7 @@ exports.getNewsAll = async (req, res, next) =>{
 
 // Add addNews 
 exports.addNews = async (req, res) =>{
-    const { date, description, imagesurl } = req.body;
+    const { date, description, imageurl } = req.body;
     const member = {
         date: date,
         description: description,
