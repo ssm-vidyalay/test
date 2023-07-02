@@ -1,4 +1,4 @@
-const ServiceHostelImagesSlider = require("../models/data_models");
+const ServiceHostelImagesSlider = require("../models/service_hostel_imagesSlider_models");
 
 // single getServiceHostelImagesSlider
 exports.getServiceHostelImagesSlider = async (req, res, next) =>{
