@@ -2,21 +2,19 @@ const AboutusPrinciple = require("../models/aboutus_Principle_models");
 
 // single getAboutusPrinciple
 exports.getAboutusPrinciple = async (req, res, next) =>{
-    const principle = await AboutusPrinciple.findById(req.params.id);
-    console.log(principle);
+    const data = await AboutusPrinciple.findById(req.params.id);
   res.status(200).json({
     success: true,
-    principle,
+    data,
   });
 }
 
 // All getAboutusPrinciple
 exports.getAboutusPrincipleAll = async (req, res, next) =>{
-    const principle = await AboutusPrinciple.find();
-    console.log(principle);
+    const data = await AboutusPrinciple.find();
   res.status(200).json({
     success: true,
-    principle,
+    data,
   });
 }
 
@@ -30,42 +28,42 @@ exports.addAboutusPrinciple = async (req, res) =>{
       description: description,
       designation: designation,
   }
-    const principles = await AboutusPrinciple.create(aboutus);
+    const data = await AboutusPrinciple.create(aboutus);
 
     res.status(200).json({
         success: true,
-        principles,
+        data,
     });
 }
 
 // Upadate upadateAboutusPrinciple
 exports.updateAboutusPrinciple = async (req, res, next) =>{
-  let principle = await AboutusPrinciple.findById(req.params.id);
+  let data = await AboutusPrinciple.findById(req.params.id);
 
-  principle = await AboutusPrinciple.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await AboutusPrinciple.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    principle,
+    data,
 });
 }
 
 // delete deleteAboutusPrinciple
 exports.deleteAboutusPrinciple = async(req, res, next) =>{
 
-  let principle = await AboutusPrinciple.findById(req.params.id);
+  let data = await AboutusPrinciple.findById(req.params.id);
 
-  if(!principle){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"Principle not found"
     })
   }
 
-  principle = await AboutusPrinciple.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await AboutusPrinciple.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

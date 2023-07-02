@@ -2,35 +2,32 @@ const AboutusFounder = require("../models/aboutus_Founder_models");
 
 // single getAboutusAnnualReport
 exports.getAboutusFounder = async (req, res, next) =>{
-    const founder = await AboutusFounder.findById(req.params.id);
-    console.log(founder);
+    const data = await AboutusFounder.findById(req.params.id);
   res.status(200).json({
     success: true,
-    founder,
+    data,
   });
 }
 
 // All getAboutusFounder
 exports.getAboutusFounderAll = async (req, res, next) =>{
-    const founder = await AboutusFounder.find();
-    console.log(founder);
+    const data = await AboutusFounder.find();
   res.status(200).json({
     success: true,
-    founder,
+    data,
   });
 }
 
 // Add addAboutusFounder 
 exports.addAboutusFounder = async (req, res) =>{
     const { name, image, description, designation } = req.body;
-    // console.log(req.body);
     const aboutus = {
         name: name,
         image: image,
         description: description,
         designation: designation,
     }
-    // console.log(aboutus);
+    
     const FounderSingle = await AboutusFounder.create(aboutus);
 
     res.status(200).json({
@@ -41,32 +38,32 @@ exports.addAboutusFounder = async (req, res) =>{
 
 // Upadate upadateAboutusFounder
 exports.updateAboutusFounder = async (req, res, next) =>{
-  let founder = await AboutusFounder.findById(req.params.id);
+  let data = await AboutusFounder.findById(req.params.id);
 
-  founder = await AboutusFounder.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await AboutusFounder.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    founder,
+    data,
 });
 }
 
 // delete deleteAboutusFounder
 exports.deleteAboutusFounder = async(req, res, next) =>{
 
-  let founder = await AboutusFounder.findById(req.params.id);
+  let data = await AboutusFounder.findById(req.params.id);
 
-  if(!founder){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"Founder not found"
     })
   }
 
-  founder = await AboutusFounder.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await AboutusFounder.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
