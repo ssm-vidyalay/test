@@ -20,9 +20,9 @@ exports.getServiceComputerLabImagesSliderAll = async (req, res, next) =>{
 
 // Add addServiceComputerLabImagesSlider 
 exports.addServiceComputerLabImagesSlider = async (req, res) =>{
-    const {  images } = req.body;
+    const {  imageurl } = req.body;
     const member = {
-        images: images,
+        imageurl: imageurl,
     }
     // console.log(aboutus);
     const service_computerLab_imagesSlider = await ServiceComputerLabImagesSlider.create(member);

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const serviceComputerLabImagesSliderSchema = new mongoose.Schema({
-    images:
+    imageurl:
         {
             type:String,
             required:true
