@@ -2,19 +2,19 @@ const ServiceLibrary = require("../models/service_library_models");
 
 // single getServiceLibrary
 exports.getServiceLibrary = async (req, res, next) =>{
-    const service_library = await ServiceLibrary.findById(req.params.id);
+    const data = await ServiceLibrary.findById(req.params.id);
   res.status(200).json({
     success: true,
-    service_library,
+    data,
   });
 }
 
 // All getServiceLibrary
 exports.getServiceLibraryAll = async (req, res, next) =>{
-    const service_library = await ServiceLibrary.find();
+    const data = await ServiceLibrary.find();
   res.status(200).json({
     success: true,
-    service_library,
+    data,
   });
 }
 
@@ -26,42 +26,42 @@ exports.addServiceLibrary = async (req, res) =>{
         images: images,
     }
     // console.log(aboutus);
-    const service_library = await ServiceLibrary.create(member);
+    const data = await ServiceLibrary.create(member);
 
     res.status(200).json({
         success: true,
-        service_library,
+        data,
     });
 }
 
 // Upadate upadateServiceLibrary
 exports.updateServiceLibrary = async (req, res, next) =>{
-  let service_library = await ServiceLibrary.findById(req.params.id);
+  let data = await ServiceLibrary.findById(req.params.id);
 
-  service_library = await ServiceLibrary.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await ServiceLibrary.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    service_library,
+    data,
 });
 }
 
 // delete deleteServiceLibrary
 exports.deleteServiceLibrary = async(req, res, next) =>{
 
-  let service_library = await ServiceLibrary.findById(req.params.id);
+  let data = await ServiceLibrary.findById(req.params.id);
 
-  if(!service_library){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"Service library detail not found"
     })
   }
 
-  service_library = await ServiceLibrary.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await ServiceLibrary.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

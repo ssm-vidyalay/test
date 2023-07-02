@@ -2,19 +2,19 @@ const ServiceHostel = require("../models/service_hostel_models");
 
 // single getServiceHostel
 exports.getServiceHostel = async (req, res, next) =>{
-    const service_hostel = await ServiceHostel.findById(req.params.id);
+    const data = await ServiceHostel.findById(req.params.id);
   res.status(200).json({
     success: true,
-    service_hostel,
+    data,
   });
 }
 
 // All getServiceHostel
 exports.getServiceHostelAll = async (req, res, next) =>{
-    const service_hostel = await ServiceHostel.find();
+    const data = await ServiceHostel.find();
   res.status(200).json({
     success: true,
-    service_hostel,
+    data,
   });
 }
 
@@ -26,42 +26,42 @@ exports.addServiceHostel = async (req, res) =>{
         images: images,
     }
     // console.log(aboutus);
-    const service_hostel = await ServiceHostel.create(member);
+    const data = await ServiceHostel.create(member);
 
     res.status(200).json({
         success: true,
-        service_hostel,
+        data,
     });
 }
 
 // Upadate upadateServiceHostel
 exports.updateServiceHostel = async (req, res, next) =>{
-  let service_hostel = await ServiceHostel.findById(req.params.id);
+  let data = await ServiceHostel.findById(req.params.id);
 
-  service_hostel = await ServiceHostel.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await ServiceHostel.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    service_hostel,
+    data,
 });
 }
 
 // delete deleteServiceHostel
 exports.deleteServiceHostel = async(req, res, next) =>{
 
-  let service_hostel = await ServiceHostel.findById(req.params.id);
+  let data = await ServiceHostel.findById(req.params.id);
 
-  if(!service_hostel){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"Service hostel detail not found"
     })
   }
 
-  service_hostel = await ServiceHostel.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await ServiceHostel.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });

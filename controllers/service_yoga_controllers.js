@@ -2,19 +2,19 @@ const ServiceYoga = require("../models/service_yoga_models");
 
 // single getServiceYoga
 exports.getServiceYoga = async (req, res, next) =>{
-    const service_yoga = await ServiceYoga.findById(req.params.id);
+    const data = await ServiceYoga.findById(req.params.id);
   res.status(200).json({
     success: true,
-    service_yoga,
+    data,
   });
 }
 
 // All getServiceYoga
 exports.getServiceYogaAll = async (req, res, next) =>{
-    const service_yoga = await ServiceYoga.find();
+    const data = await ServiceYoga.find();
   res.status(200).json({
     success: true,
-    service_yoga,
+    data,
   });
 }
 
@@ -26,42 +26,42 @@ exports.addServiceYoga = async (req, res) =>{
         images: images,
     }
     // console.log(aboutus);
-    const service_yoga = await ServiceYoga.create(member);
+    const data = await ServiceYoga.create(member);
 
     res.status(200).json({
         success: true,
-        service_yoga,
+        data,
     });
 }
 
 // Upadate upadateServiceYoga
 exports.updateServiceYoga = async (req, res, next) =>{
-  let service_yoga = await ServiceYoga.findById(req.params.id);
+  let data = await ServiceYoga.findById(req.params.id);
 
-  service_yoga = await ServiceYoga.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await ServiceYoga.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    service_yoga,
+    data,
 });
 }
 
 // delete deleteServiceYoga
 exports.deleteServiceYoga = async(req, res, next) =>{
 
-  let service_yoga = await ServiceYoga.findById(req.params.id);
+  let data = await ServiceYoga.findById(req.params.id);
 
-  if(!service_yoga){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"Service yoga detail not found"
     })
   }
 
-  service_yoga = await ServiceYoga.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await ServiceYoga.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
