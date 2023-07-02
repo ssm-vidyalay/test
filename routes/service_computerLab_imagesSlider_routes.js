@@ -4,10 +4,10 @@ const router = express.Router();
 // const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 
-router.route("/services/computer-lab/imagesSlider/:id").get(getServiceComputerLabImagesSlider);
-router.route("/services/computer-lab/imagesSlider/").get(getServiceComputerLabImagesSliderAll);
-router.route("/services/computer-lab/imagesSlider/").post(addServiceComputerLabImagesSlider);
-router.route("/services/computer-lab/imagesSlider/:id").put(updateServiceComputerLabImagesSlider);
-router.route("/services/computer-lab/imagesSlider/:id").delete(deleteServiceComputerLabImagesSlider);
+router.route("/services/computerLabImagesSlider/:id").get(getServiceComputerLabImagesSlider);
+router.route("/services/computerLabImagesSlider/").get(getServiceComputerLabImagesSliderAll);
+router.route("/services/computerLabImagesSlider/").post(addServiceComputerLabImagesSlider);
+router.route("/services/computerLabImagesSlider/:id").put(updateServiceComputerLabImagesSlider);
+router.route("/services/computerLabImagesSlider/:id").delete(deleteServiceComputerLabImagesSlider);
 
 module.exports = router;

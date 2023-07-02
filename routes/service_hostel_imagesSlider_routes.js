@@ -4,10 +4,10 @@ const router = express.Router();
 // const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
 
 
-router.route("/services/hostel/imagesSlider/:id").get(getServiceHostelImagesSlider);
+router.route("/services/hostelImagesSlider/:id").get(getServiceHostelImagesSlider);
 router.route("/services/hostelImagesSlider/").get(getServiceHostelImagesSliderAll);
-router.route("/services/hostel/imagesSlider/").post(addServiceHostelImagesSlider);
-router.route("/services/hostel/imagesSlider/:id").put(updateServiceHostelImagesSlider);
-router.route("/services/hostel/imagesSlider/:id").delete(deleteServiceHostelImagesSlider);
+router.route("/services/hostelImagesSlider/").post(addServiceHostelImagesSlider);
+router.route("/services/hostelImagesSlider/:id").put(updateServiceHostelImagesSlider);
+router.route("/services/hostelImagesSlider/:id").delete(deleteServiceHostelImagesSlider);
 
 module.exports = router;
