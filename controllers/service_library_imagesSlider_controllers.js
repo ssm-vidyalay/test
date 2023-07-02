@@ -20,9 +20,9 @@ exports.getServiceLibraryImagesSliderAll = async (req, res, next) =>{
 
 // Add addServiceLibraryImagesSlider 
 exports.addServiceLibraryImagesSlider = async (req, res) =>{
-    const { images } = req.body;
+    const { imageurl } = req.body;
     const member = {
-        images: images,
+        imageurl: imageurl,
     }
     // console.log(aboutus);
     const service_library_imagesSlider = await ServiceLibraryImagesSlider.create(member);

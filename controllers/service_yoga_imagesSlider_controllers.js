@@ -20,9 +20,9 @@ exports.getServiceYogaImagesSliderAll = async (req, res, next) =>{
 
 // Add addServiceYogaImagesSlider 
 exports.addServiceYogaImagesSlider = async (req, res) =>{
-    const { images } = req.body;
+    const { imageurl } = req.body;
     const member = {
-        images: images,
+        imageurl: imageurl,
     }
     // console.log(aboutus);
     const service_yoga_imagesSlider = await ServiceYogaImagesSlider.create(member);

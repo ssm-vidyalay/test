@@ -20,9 +20,9 @@ exports.getServiceHostelImagesSliderAll = async (req, res, next) =>{
 
 // Add addServiceHostelImagesSlider 
 exports.addServiceHostelImagesSlider = async (req, res) =>{
-    const { images } = req.body;
+    const { imageurl } = req.body;
     const member = {
-        images: images,
+        imageurl: imageurl,
     }
     // console.log(aboutus);
     const service_hostel_imagesSlider = await ServiceHostelImagesSlider.create(member);

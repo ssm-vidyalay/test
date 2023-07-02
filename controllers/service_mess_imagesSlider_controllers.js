@@ -20,9 +20,9 @@ exports.getServiceMessImagesSliderAll = async (req, res, next) =>{
 
 // Add addServiceMessImagesSlider 
 exports.addServiceMessImagesSlider = async (req, res) =>{
-    const { images } = req.body;
+    const { imageurl } = req.body;
     const member = {
-        images: images,
+        imageurl: imageurl,
     }
     // console.log(aboutus);
     const service_mess_imagesSlider = await ServiceMessImagesSlider.create(member);
