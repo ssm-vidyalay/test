@@ -44,6 +44,7 @@ const serviceLibraryImagesSlider = require("./routes/service_library_imagesSlide
 const serviceMessImagesSlider = require("./routes/service_mess_imagesSlider_routes");
 const serviceYogaImagesSlider = require("./routes/service_yoga_imagesSlider_routes");
 const alumniImagesSlider = require("./routes/alumni_imagesSlider_routes");
+const homeImagesSlider=require('./routes/home_imagesSlider_routes');
 
 
 
@@ -92,5 +93,6 @@ app.use("/ssmv", serviceLibraryImagesSlider);
 app.use("/ssmv", serviceMessImagesSlider);
 app.use("/ssmv", serviceYogaImagesSlider);
 app.use("/ssmv", alumniImagesSlider);
+app.use("/ssmv", homeImagesSlider);
 
 module.exports = app;
