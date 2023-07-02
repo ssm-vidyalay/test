@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.route("/services/computerLab/imagesSlider/:id").get(getServiceComputerLabImagesSlider);
-router.route("/services/computerLabImagesSlider/").get(getServiceComputerLabImagesSliderAll);
+router.route("/services/computerLab/imagesSlider/").get(getServiceComputerLabImagesSliderAll);
 router.route("/services/computerLab/imagesSlider/").post(addServiceComputerLabImagesSlider);
 router.route("/services/computerLab/imagesSlider/:id").put(updateServiceComputerLabImagesSlider);
 router.route("/services/computerLab/imagesSlider/:id").delete(deleteServiceComputerLabImagesSlider);
