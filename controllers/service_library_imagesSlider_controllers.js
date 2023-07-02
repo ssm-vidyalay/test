@@ -2,19 +2,19 @@ const ServiceLibraryImagesSlider = require("../models/service_library_imagesSlid
 
 // single getServiceLibraryImagesSlider
 exports.getServiceLibraryImagesSlider = async (req, res, next) =>{
-    const service_library_imagesSlider = await ServiceLibraryImagesSlider.findById(req.params.id);
+    const data = await ServiceLibraryImagesSlider.findById(req.params.id);
   res.status(200).json({
     success: true,
-    service_library_imagesSlider,
+    data,
   });
 }
 
 // All getServiceLibraryImagesSlider
 exports.getServiceLibraryImagesSliderAll = async (req, res, next) =>{
-    const service_library_imagesSlider = await ServiceLibraryImagesSlider.find();
+    const data = await ServiceLibraryImagesSlider.find();
   res.status(200).json({
     success: true,
-    service_library_imagesSlider,
+    data,
   });
 }
 
@@ -25,42 +25,42 @@ exports.addServiceLibraryImagesSlider = async (req, res) =>{
         imageurl: imageurl,
     }
     // console.log(aboutus);
-    const service_library_imagesSlider = await ServiceLibraryImagesSlider.create(member);
+    const data = await ServiceLibraryImagesSlider.create(member);
 
     res.status(200).json({
         success: true,
-        service_library_imagesSlider,
+        data,
     });
 }
 
 // Upadate upadateServiceLibraryImagesSlider
 exports.updateServiceLibraryImagesSlider = async (req, res, next) =>{
-  let service_library_imagesSlider = await ServiceLibraryImagesSlider.findById(req.params.id);
+  let data = await ServiceLibraryImagesSlider.findById(req.params.id);
 
-  service_library_imagesSlider = await ServiceLibraryImagesSlider.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await ServiceLibraryImagesSlider.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    service_library_imagesSlider,
+    data,
 });
 }
 
 // delete deleteServiceLibraryImagesSlider
 exports.deleteServiceLibraryImagesSlider = async(req, res, next) =>{
 
-  let service_library_imagesSlider = await ServiceLibraryImagesSlider.findById(req.params.id);
+  let data = await ServiceLibraryImagesSlider.findById(req.params.id);
 
-  if(!service_library_imagesSlider){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"Service library images slider detail not found"
     })
   }
 
-  service_library_imagesSlider = await ServiceLibraryImagesSlider.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await ServiceLibraryImagesSlider.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
