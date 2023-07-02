@@ -2,19 +2,19 @@ const CollegeAdministration = require("../models/collegeAdministration_models");
 
 // single getCollegeAdministration
 exports.getCollegeAdministration = async (req, res, next) =>{
-    const collegeadministration = await CollegeAdministration.findById(req.params.id);
+    const data = await CollegeAdministration.findById(req.params.id);
   res.status(200).json({
     success: true,
-    collegeadministration,
+    data,
   });
 }
 
 // All getCollegeAdministration
 exports.getCollegeAdministrationAll = async (req, res, next) =>{
-    const collegeadministration = await CollegeAdministration.find();
+    const data = await CollegeAdministration.find();
   res.status(200).json({
     success: true,
-    collegeadministration,
+    data,
   });
 }
 
@@ -28,42 +28,42 @@ exports.addCollegeAdministration = async (req, res) =>{
       designation: designation,
   }
     // console.log(aboutus);
-    const collegeadministration = await CollegeAdministration.create(member);
+    const data = await CollegeAdministration.create(member);
 
     res.status(200).json({
         success: true,
-        collegeadministration,
+        data,
     });
 }
 
 // Upadate upadateCollegeAdministration
 exports.updateCollegeAdministration = async (req, res, next) =>{
-  let collegeadministration = await CollegeAdministration.findById(req.params.id);
+  let data = await CollegeAdministration.findById(req.params.id);
 
-  collegeadministration = await CollegeAdministration.findByIdAndUpdate(req.params.id, req.body, {new:true,
+  data = await CollegeAdministration.findByIdAndUpdate(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
 
   res.status(200).json({
     success: true,
-    collegeadministration,
+    data,
 });
 }
 
 // delete deleteCollegeAdministration
 exports.deleteCollegeAdministration = async(req, res, next) =>{
 
-  let collegeadministration = await CollegeAdministration.findById(req.params.id);
+  let data = await CollegeAdministration.findById(req.params.id);
 
-  if(!collegeadministration){
+  if(!data){
     return res.status(500).json({
       success:false,
       message:"member detail not found"
     })
   }
 
-  collegeadministration = await CollegeAdministration.findByIdAndDelete(req.params.id, req.body, {new:true,
+  data = await CollegeAdministration.findByIdAndDelete(req.params.id, req.body, {new:true,
     useFindAndModify:true,
     runValidators:true
   });
